@@ -44,9 +44,8 @@ const Button2 = styled(Button)`
           text-decoration: underline;
         `
       }
-
     }
-    }
+  }
 `;
 
 interface IState {
