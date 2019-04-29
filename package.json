@@ -1,0 +1,39 @@
+{
+  "name": "react-boilerplate",
+  "version": "1.0.0",
+  "description": "This is a react boiler plate code with minimal setup created by Vetrivel KS, to understand setting up a project and to avoid using facebook/create-react-app. ",
+  "main": "src/App/index.js",
+  "_main_comment": "removing main from package json made no difference here, must be because webpack handles bundling",
+  "scripts": {
+    "start": "webpack-dev-server --mode development"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Vetrivel K Subramaniam",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "@types/styled-components": "^4.1.14",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.1",
+    "react-router-dom": "^5.0.0",
+    "style-loader": "^0.23.1",
+    "typescript": "^3.4.5",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.1",
+    "webpack-dev-server": "^3.3.1"
+  },
+  "dependencies": {
+    "@types/react": "^16.8.14",
+    "@types/react-dom": "^16.8.4",
+    "awesome-typescript-loader": "^5.2.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "source-map-loader": "^0.2.4",
+    "styled-components": "^4.2.0"
+  }
+}

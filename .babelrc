@@ -1,0 +1,7 @@
+{
+  "presets": [
+    // preset-env for es6+ to vanilla js
+    "@babel/env",
+    // preset-react for jsx ... to vanilla js
+    "@babel/preset-react"]
+}
