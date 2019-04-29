@@ -24,16 +24,29 @@ const Button2 = styled(Button)`
   /* Adapt the colors based on primary prop */
   background: yellow;
   ${(props:any) =>
+    {
     /* props.theme==='kaala' && css`*/
     /*  css` causes issue in typescript */
     /* Property 'css' does not exist on type 'ThemedBaseStyledInterface<any>'. */
     /* couldn't find fix online */
     /* hence directly returned string literal and it work fine :) ;) */
-    props.theme==='kaala' &&
-    `
-      padding:10px;
-      margin: 20px;
-    `}
+      if(props.theme==='kaala') {
+        return `
+          padding:10px;
+          margin: 20px;
+        `
+      }
+      else {
+        return `
+          padding:30px;
+          margin: 40px;
+          border-radius: 50px;
+          text-decoration: underline;
+        `
+      }
+
+    }
+    }
 `;
 
 interface IState {
