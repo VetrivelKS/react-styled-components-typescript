@@ -3,7 +3,7 @@ import * as React from "react";
 
 import styled from 'styled-components'
 
-const Button = styled.button`
+const ButtonComponent = styled.button.attrs({"data-qa": 'testerbutton'})`
   /* Adapt the colors based on primary prop */
   background: ${(props:any) => props.theme === 'kaala' ? "black" : "white"};
   color: ${(props:any) => props.theme === 'kaala' ? "red" : "black"};
@@ -15,12 +15,20 @@ const Button = styled.button`
   border-radius: 3px;
 `;
 
-const Button1 = styled(Button)`
+const Button1 = styled(ButtonComponent)`
   /* Adapt the colors based on primary prop */
   background: yellow;
 `;
 
-const Button2 = styled(Button)`
+const Button3 = styled(Button1).attrs({"data-qa": 'testerbutton3'})`
+  ${
+    (props:any)=> props.theme && `
+      background:  ${props.theme};
+    ` 
+  }
+`
+
+const Button2 = styled(ButtonComponent)`
   /* Adapt the colors based on primary prop */
   background: yellow;
   ${(props:any) =>
@@ -48,6 +56,8 @@ const Button2 = styled(Button)`
   }
 `;
 
+
+
 interface IState {
   withoutInit: string;
 }
@@ -74,12 +84,14 @@ class PageOne extends React.Component<any,IState>{
       <div className="page-one">
         <h1> Page One </h1>
         {this.state.withoutInit}
-        <Button onClick={this.handleClick} theme={'kaala'}>click me </Button>
-        <Button onClick={this.handleClick} >click me </Button>
+        <ButtonComponent onClick={this.handleClick} theme={'kaala'}>click me </ButtonComponent>
+        <ButtonComponent onClick={this.handleClick} >click me </ButtonComponent>
         <Button1 onClick={this.handleClick} >click me </Button1>
         <Button2 onClick={this.handleClick} theme={'kaala'} >click me </Button2>
         <Button2 onClick={this.handleClick} >click me </Button2>
 
+        <Button3 theme={'green'} />
+        <Button3 />
 
       </div>
     );
